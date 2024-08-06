@@ -31,7 +31,8 @@ public class GroupChatCreation {
                     } catch (InputMismatchException e) {
                         // 변환 실패, 숫자 형태의 번호가 아님
                         System.err.println("숫자만 입력해주세요:");
-                        scanner.next(); // 잘못된 입력을 버리고 다시 입력받기 위해 호출
+                        // 잘못된 입력을 버리고 다시 입력받기 위해 scanner.next()를 호출. break;를 적지 않았기 때문에 다시 while문이 실행된다.
+                        scanner.next();
                     }
                 }
             }
