@@ -19,10 +19,12 @@ public class GroupChatCreation {
                 System.out.println("A가 조원" + (i + 1) + "의 번호를 확인한다.");
                 System.out.print("번호가 없습니다. 번호를 입력해주세요:");
                 
-             // 번호 입력 받음. 값 입력 없이 enter를 치면 줄바꿈만 되는데 nextLine()을 사용하지 않고 해결하는법 찾아야함.
+             // 번호 입력 받음.
+             // 값 입력 없이 enter를 치면 줄바꿈만 되는데 nextLine()을 사용해야 해결 가능. nextInt()를 사용하는 방법은 없는듯하다. 있다고 해도 매우 복잡하여 비효율적일것으로 생각됨.
                 while (true) {
                     try {
                         // 입력받은 값을 숫자 형태로 변환
+                    	scanner = new Scanner(System.in);  // scanner를 다시 초기화해주지 않으면 continue시 이전 입력값이 계속 들어가서 무한 루프에 빠진다.
                         int number = scanner.nextInt();
 
                         // 변환 성공, 숫자 형태의 번호이므로 저장
@@ -32,7 +34,7 @@ public class GroupChatCreation {
                         // 변환 실패, 숫자 형태의 번호가 아님
                         System.err.print("숫자만 입력해주세요:");
                         // 잘못된 입력을 버리고 다시 입력받기 위해 scanner.next()를 호출. break;를 적지 않았기 때문에 다시 while문이 실행된다.
-                        scanner.next();
+                        continue;
                     }
                 }
             }

@@ -3,8 +3,9 @@ package ch05.sec05;
 public class EmptyStringExample {
 	public static void main(String[] args) {	
 		String hobby = "";
+//		if(hobby == "")도 가능
 		if(hobby.equals("")) {
-		   System.out.println("hobby 변수가 참조는 String 객체는 빈문자열");
+		   System.out.println("hobby 변수가 참조하는 String 객체는 빈문자열");
 		}	
 	}
 }	
