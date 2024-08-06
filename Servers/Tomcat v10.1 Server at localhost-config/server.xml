@@ -144,7 +144,7 @@
         <Valve className="org.apache.catalina.valves.AccessLogValve" directory="logs" pattern="%h %l %u %t &quot;%r&quot; %s %b" prefix="localhost_access_log" suffix=".txt"/>
 
 <!-- path는 주소로 /로 적으면 메인화면에서 실행된다 -->
-      <Context docBase="demo_tomcat" path="/demo_tomcat" reloadable="true" source="org.eclipse.jst.jee.server:demo_tomcat"/><Context docBase="demo" path="/demo" reloadable="true" source="org.eclipse.jst.jee.server:demo"/></Host>
+      <Context docBase="demo_tomcat" path="/demo_tomcat" reloadable="true" source="org.eclipse.jst.jee.server:demo_tomcat"/><Context docBase="demo" path="/demo" reloadable="true" source="org.eclipse.jst.jee.server:demo"/><Context docBase="jsp_20240805_1" path="/jsp_20240805_1" reloadable="true" source="org.eclipse.jst.jee.server:jsp_20240805_1"/></Host>
     </Engine>
   </Service>
 </Server>
