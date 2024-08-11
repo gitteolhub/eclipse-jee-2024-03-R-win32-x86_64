@@ -12,10 +12,14 @@ import java.io.IOException;
 /**
  * Servlet implementation class DemoServlet
  */
-public class DemoServlet extends HttpServlet {
+public class DemoServlet extends HttpServlet {    
+
+	/**
+	 * 
+	 */
 	private static final long serialVersionUID = 1L;
-       
-    /**
+
+	/**
      * @see HttpServlet#HttpServlet()
      */
     public DemoServlet() {
@@ -51,6 +55,13 @@ public class DemoServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		doGet(request, response);
+	}
+
+	@Override
+	public void destroy() {
+		// TODO Auto-generated method stub
+		super.destroy();  // 활성화돼있으면 Tomcat이 종료되서 아래 destroy문구가 출력되지 않는다. 하지만 주석 처리시 resource(database 등)가 해제되지 않아 memory 누수가 발생한다. 발생 시 computer를 재부팅해야한다.
+		System.out.println("destroy");  // super 윗줄에 적은 code는 무시되므로 위에 적어도 소용없다.
 	}
 
 }
