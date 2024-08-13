@@ -1,9 +1,9 @@
-package practice;
+package thisIsJava;
 
 import java.util.Scanner;
 import java.math.BigInteger;
 
-public class ThisIsJava4_7 {
+public class Q4_7 {
 	public static void main(String[] args) {
 		boolean run = true;
 		Scanner scan = new Scanner(System.in);

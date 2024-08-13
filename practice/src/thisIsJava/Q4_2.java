@@ -1,6 +1,6 @@
-package practice;
+package thisIsJava;
 
-public class ThisIsJava4_2 {
+public class Q4_2 {
 	public static void main(String[] args) {
 		String grade = "B";
 		int score1 = switch (grade) {

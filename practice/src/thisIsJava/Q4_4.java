@@ -1,5 +1,5 @@
-package practice;
-public class ThisIsJava4_4{
+package thisIsJava;
+public class Q4_4{
 	public static void main(String[] args) {
 		int a = 0;
 		int b = 0;
