@@ -15,7 +15,7 @@ import java.io.PrintWriter;
  */
 // Spring Boot에서는 xml file을 거의 안 쓰고 아래와 같은 어노테이션 방식을 쓴다.
 @WebServlet(urlPatterns = { "/demo2.do", "/DemoServlet" }, initParams = {
-		@WebInitParam(name = "java", value = "21", description = "서블릿") })
+		@WebInitParam(name = "java", value = "21", description = "서블릿") })  // 초기화 매개변수를 설정했지만 이용하는 곳은 없다
 public class DemoServlet extends HttpServlet {
 
 	/**
@@ -55,7 +55,7 @@ public class DemoServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		// getWriter는 실행시 한 번만 호출 가능하므로 기본 getWriter는 주석처리 해놓았다
-//		response.getWriter().append("Served at: ").append(request.getContextPath());
+		// response.getWriter().append("Served at: ").append(request.getContextPath());
 		response.setContentType("text/html; charset = UTF-8");
 		PrintWriter out = response.getWriter();
 		out.println("<b>doGet</b><br>실행");
@@ -67,8 +67,13 @@ public class DemoServlet extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		doGet(request, response);
+		// doGet을 호출시 doGet 내부의 getWriter가 실행되므로 getWriter가 중복되어 오류가 발생하므로 주석처리 해놓았다
+		// doGet(request, response);
+		request.setCharacterEncoding("UTF-8");  // 지금은 sevlet 6.0이라 안 써도 한글 출력 가능. 하위 version은 반드시 써줘야함.
+		String jsp = request.getParameter("jsp");
+		response.setContentType("text/html; charset = UTF-8");
+		PrintWriter out = response.getWriter();
+		out.println("jsp : " + jsp);
 	}
 
 	@Override
