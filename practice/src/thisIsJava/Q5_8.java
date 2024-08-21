@@ -13,7 +13,7 @@ public class Q5_8 {
 		for (int[] arr : array) {
 			for (int value : arr) {
 				sum += value;
-				count += 1;
+				count++;
 			}
 		}
 		avg = (double) sum / count;
